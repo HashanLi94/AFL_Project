@@ -98,9 +98,11 @@ export class FlightsHotelsComponent  {
       travelDatesTwo: '',
       occupants: '',
       preferredCabinClass: '',
-      preferredAirline: '',
       selectedDirectFlights: '',
       selectedRefundableFlights: '',
+      checkInDate: '',
+      checkOutDate: '',
+
     });
 
     this.form.reset(); // reset the form
