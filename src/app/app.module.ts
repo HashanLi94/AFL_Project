@@ -29,6 +29,7 @@ import { SummerySearchTripDetailsComponent } from './components/search-trip-deta
 import { FlightsHotelsComponent } from './components/search-trip-details-only/flights-hotels/flights-hotels.component';
 import { FlightsOnlyComponent } from './components/search-trip-details-only/flights-only/flights-only.component';
 import { HotelsOnlyComponent } from './components/search-trip-details-only/hotels-only/hotels-only.component';
+import { SerchTripResultsBreadcrumbComponent } from './components/search-trip-details-only/serch-trip-results-breadcrumb/serch-trip-results-breadcrumb.component';
 
 
 
@@ -47,7 +48,8 @@ import { HotelsOnlyComponent } from './components/search-trip-details-only/hotel
     FlightsHotelsComponent,
     FlightsOnlyComponent,
     HotelsOnlyComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SerchTripResultsBreadcrumbComponent
 
   ],
   imports: [
