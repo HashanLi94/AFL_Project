@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <p> BreadCrumb</p>
+    </div>
+    <div class="p-col-12">
+      <table class="table">
+        <tr>
+          <td style="width:5px">
+            <p-checkbox [(ngModel)]="checked" binary="true"></p-checkbox>
+          </td>
+          <td class="p-pl-0">
+            <h5>I have booked my own flights and hotel - {{checked}}</h5>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="p-col-12 p-sm-12 p-xs-12">
+      <div class="p-grid">
+        <div class="p-col-4">
+          <p role="button" (click)="toggleDisplayHotelsFlights()"> Flights + Hotels</p>
+        </div>
+        <div class="p-col-4">
+          <p role="button"  (click)="toggleDisplayFlights()"> Flights Only</p>
+        </div>
+        <div class="p-col-4">
+          <p role="button"  (click)="toggleDisplayHotels()"> Hotels Only</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="p-grid">
+    <div class="p-col-12 p-md-8 p-sm-12 p-xs-12">
+      <app-flights-hotels *ngIf="isDisplayHotelsFlights"></app-flights-hotels>
+      <app-flights-only *ngIf="isDisplayFlights"></app-flights-only>
+      <app-hotels-only  *ngIf="isDisplayHotels"></app-hotels-only>
+    </div>
+    <div class="p-col-12 p-md-4 p-sm-12 p-xs-12 p-pt-0">
+      <app-summery-search-trip-details></app-summery-search-trip-details>
+    </div>
+  </div>
+</div>

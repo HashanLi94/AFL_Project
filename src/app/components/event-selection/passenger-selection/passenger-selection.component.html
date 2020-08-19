@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="jumbotron mx-auto my-5">
+    <form [formGroup]="passengerDetailsForm" (ngSubmit)="onSubmit(passengerDetailsForm.value)">
+      <h4> How many people are attending? (max 9 ppl)</h4>
+      <hr>
+      <div class="p-field">
+        <label> <b>Adults </b></label>
+        <div class="p-col-12">
+          <p-inputNumber formControlName="adult"
+                         [showButtons]="true"
+                         buttonLayout="horizontal" spinnerMode="horizontal"
+                         [step]="1"
+                         decrementButtonClass="ui-button-gray" incrementButtonClass="ui-button-success"
+                         incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"
+                         [min]="0" [max]="9">
+          </p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-field">
+        <label> <b>Child(3-14)</b></label>
+        <div class="p-col-12">
+          <p-inputNumber formControlName="child"
+                         [showButtons]="true"
+                         buttonLayout="horizontal" spinnerMode="horizontal"
+                         [step]="1"
+                         decrementButtonClass="ui-button-gray" incrementButtonClass="ui-button-success"
+                         incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"
+                         [min]="0" [max]="9">
+          </p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-field">
+        <label><b>Concession</b></label>
+        <div class="p-col-12">
+          <p-inputNumber formControlName="con"
+                         [showButtons]="true"
+                         buttonLayout="horizontal" spinnerMode="horizontal"
+                         [step]="1"
+                         decrementButtonClass="ui-button-gray" incrementButtonClass="ui-button-success"
+                         incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"
+                         [min]="0" [max]="9">
+          </p-inputNumber>
+        </div>
+      </div>
+
+      <div class="p-col-12">
+        <p-message *ngIf="passengerDetailsForm.hasError('notValid') " severity="error" text="Max Passengers allowed is 9!"></p-message>
+      </div>
+      <div class="p-col-12">
+        <label> <b>Which days would you like to attend?</b></label> <br>
+        <p-calendar formControlName="dateOfEvent" selectionMode="range" [readonlyInput]="true"></p-calendar>
+      </div>
+
+      <div class="p-col-12">
+        <button [disabled]="!passengerDetailsForm.valid" class="btn btn-primary" routerLink="/ticketSelection" type="button"> Let's go </button>
+      </div>
+    </form>
+  </div>
+
+
+
+<!--[style.backgroundColor]="isActive() ? 'red' : 'blue'"-->

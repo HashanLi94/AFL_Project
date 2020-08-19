@@ -1,0 +1,93 @@
+<p-card >
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+  <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> From</label> <br>
+          <input formControlName="from" type="text" pInputText placeholder="">
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> To</label> <br>
+          <input formControlName="to" type="text" pInputText placeholder="">
+        </div>
+      </div>
+    </div> <!-- for/to -->
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> Travel Dates</label> <br>
+          <p-calendar formControlName="travelDatesOne" [(ngModel)]="travelDateOne" [showIcon]="true"></p-calendar>
+        </div>
+      </div> <!--Travel Dates-->
+
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> Travel Dates</label> <br>
+          <p-calendar formControlName="travelDatesTwo" [(ngModel)]="travelDateTwo" [showIcon]="true"></p-calendar>
+        </div>
+      </div>
+    </div> <!--Travel Dates-->
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> Occupants </label> <br>
+          <p-dropdown formControlName="occupants" [options]="packages" [(ngModel)]="selectedPackage" placeholder="Select a Package" optionLabel="name" [showClear]="true"></p-dropdown>
+        </div>
+      </div>
+    </div> <!-- dropdown -->
+
+    <p-accordion>
+      <p-accordionTab header="Advanced Options" [selected]="false">
+        <div class="p-grid ui-fluid">
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Preferred cabin class </label> <br>
+              <p-dropdown formControlName="preferredCabinClass" [options]="cabinClass" [(ngModel)]="selectedCabinClass" placeholder="Select a Package" optionLabel="cabinClassName" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <p-checkbox formControlName="selectedDirectFlights" name="group1" value="Direct Flights Only" label="Direct Flights Only" inputId="ny" [(ngModel)]="selectedCheckBox"></p-checkbox>
+            </div>
+          </div>
+        </div> <!-- dropdown -->
+
+        <div class="p-grid ui-fluid p-mt-3">
+          <div class="p-col-12 p-md-12 p-sm-12 p-xs-12">
+            <p-checkbox formControlName="selectedRefundableFlights" name="group1" value="Refundable Flights Only"   inputId="ny" [(ngModel)]="selectedCheckBox" label="I only need a hotel for part of my stay"> </p-checkbox>
+          </div>
+        </div> <!-- dropdown -->
+        <hr>
+
+        <div class="p-grid ui-fluid">
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Check In Date</label> <br>
+              <p-calendar [(ngModel)]="checkInDate" formControlName="checkInDate"  [showIcon]="true"></p-calendar>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Check Out Date</label> <br>
+              <p-calendar  [(ngModel)]="checkOutDate" formControlName="checkOutDate"  [showIcon]="true"></p-calendar>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6 p-sm-12 p-xs-12 p-text-right">
+          <button pButton type="submit" label="Search"  icon="pi pi-check" iconPos="left"></button>
+          <button pButton type="button" class="p-button-warning" label="Clear"  icon="pi pi-check" iconPos="left" (click)="onClear()"></button>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+  </form>
+</p-card>
+
+

@@ -1,0 +1,29 @@
+<div class="container border border-dark p-2 m-2 mx-auto my-5" style="width: 500px">
+
+  <!--    <p:fieldset legend="Test Login" style="margin-bottom:20px">-->
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="ui-fluid">
+      <label for=""> User Name</label> <br>
+      <input formControlName="userName" type="email" pInputText placeholder="Enter Username here">
+      <div *ngIf="username.invalid && username.touched"  class="alert alert-danger">
+        <small *ngIf="username.errors.required" class="text-muted"> Field Required </small>
+        <small *ngIf="username.errors.email" class="text-muted"> User name should be an Email </small>
+      </div> <!-- Validations-->
+    </div> <!-- username-->
+
+    <div class="ui-fluid">
+      <label> Password </label> <br>
+      <input formControlName="password" type="password" pInputText  placeholder="Enter password here">
+      <div *ngIf="password.invalid && password.touched"  class="alert alert-danger">
+        <small *ngIf="password.errors.required" class="text-muted"> Field Required </small>
+        <small *ngIf="password.errors.minlength" class="text-muted"> Minimum 3 characters need for the password </small>
+      </div> <!-- Validations-->
+    </div><!-- password-->
+
+    <button pButton type="button" label="SignIn " class="ui-button-info m-2" icon="pi pi-check" iconPos="right" [disabled]="!form.valid"  routerLink="/passengerDetails"></button>
+
+  </form>
+
+</div>
+
+

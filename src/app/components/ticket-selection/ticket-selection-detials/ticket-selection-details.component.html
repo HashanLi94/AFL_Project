@@ -1,0 +1,339 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <a routerLink="/passengerDetails" class="text-decoration-none"  > Back</a>
+    </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <a routerLink="/" class="text-decoration-none"> Return to Passenger Details</a>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 col-sm-12 col-xs-12">
+      <div class="container mt-4">
+        <h3>Select your tickets</h3>
+        <small>Select which sessions, varrue and ticket category you wish to attend</small>
+        <hr>
+        <p-accordion>
+          <p-accordionTab header="Day 01" [selected]="false">
+            <div class="container mt-4">
+              <h4 class="text-center"> Select your Arena </h4>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-4 col-sm-12 col-xs-12">
+                    <button (click)="toggleDisplayA()" pButton type="button" label="Rod Laver Arena"  class="p-button-md p-button-success" ></button>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12">
+                    <button (click)="toggleDisplayB()" pButton type="button" label="Margaret Court Arena"  class="p-button-md p-button-success p-pr-1 p-pl-1" ></button>
+                  </div>
+
+                  <div class="col-md-4 col-sm-12 col-xs-12">
+                    <button (click)="toggleDisplayC()" pButton type="button" label="Malbourne Arena"  class="p-button-md p-button-success" ></button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="isDisplayA" class="container mt-5">
+              <div class="jumbotron">
+                <h4 class="text-center"> Select your tickets</h4>
+
+                <p>`Prices listed for {{ adultsTotal}} Adults, <br>
+                  {{ childTotal}} Children, <br>
+                  {{ conTotal}} Concession` <br>
+                  on {{ dateOfEvent}}</p>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> on court sitting</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="{{ totalCost }}" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Lower</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Shade </p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Sun</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="isDisplayB" class="container mt-5">
+              <div class="jumbotron">
+                <h4 class="text-center"> Select your tickets !!</h4>
+
+                <p>`Prices listed for {{ adultsTotal}} Adults, <br>
+                  {{ childTotal}} Children, <br>
+                  {{ conTotal}} Concession` <br>
+                  on {{ dateOfEvent}}</p>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> on court sitting</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="{{ totalCost }}" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Lower</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Shade </p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Sun</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="isDisplayC" class="container mt-5">
+              <div class="jumbotron">
+                <h4 class="text-center"> Select your tickets !!!</h4>
+
+                <p>`Prices listed for {{ adultsTotal}} Adults, <br>
+                  {{ childTotal}} Children, <br>
+                  {{ conTotal}} Concession` <br>
+                  on {{ dateOfEvent}}</p>
+                <hr>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> on court sitting</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="{{ totalCost }}" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Lower</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Shade </p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p> Upper Sun</p>
+                      </div>
+                      <div class="col-md-6 col-sm-6 col-xs-6">
+                        <p-accordion>
+                          <p-accordionTab header="$210.00" [selected]="false">
+                            Adult : $100.00 <br>
+                            Child: $40.00 <br>
+                            Adult : $30.00 <br>
+                          </p-accordionTab>
+                        </p-accordion>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </p-accordionTab>
+        </p-accordion>
+
+        <!--  Acc day 02-->
+        <p-accordion>
+          <p-accordionTab header="Day 02" [selected]="false">
+
+          </p-accordionTab>
+        </p-accordion>
+        <!--  Acc day 03-->
+        <p-accordion>
+          <p-accordionTab header="Day 03" [selected]="false">
+
+          </p-accordionTab>
+        </p-accordion>
+      </div>
+    </div> <!-- day 1, day 2, day 3-->
+
+    <div class="col-md-4 col-sm-12 col-xs-12 mt-4">
+      <p-panel header="&nbsp;&nbsp;Rod Laver Arena" [style]="{'margin-bottom':'20px'}" class="p-text-center">
+        <img [src]="imgUrl" style="width: 300px; height: 450px"  >
+
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt dolorem dolores fugiat ipsa iste, obcaecati officia officiis porro provident?</p>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi deserunt dolorem dolores fugiat ipsa iste, obcaecati officia officiis porro provident?</p>
+
+
+      </p-panel>
+
+    </div>
+  </div><!-- img-->
+</div>
+
+<div class="container-fluid mt-4">
+  <div class="row text-center" >
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <table class="table">
+        <tr>
+          <td> Adults <br>
+          2
+          </td>
+          <td> Children <br>
+          2
+          </td>
+          <td> Conssesion <br>
+          0
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="col-md-3 col-sm-12 col-xs-12 mt-2">
+      <strong>Total $100.00</strong> <br>
+      <small>ING CST</small>
+    </div>
+
+    <div class="col-md-3 col-sm-12 col-xs-12 mt-2">
+      <button routerLink="/extras-selection" pButton type="button" class="p-button-danger p-button-rounded" label="Continue"></button>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+

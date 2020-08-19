@@ -1,0 +1,122 @@
+<p-card >
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="p-grid ui-fluid">
+      <div class="p-col-4 p-md-4 p-sm-4 p-xs-4">
+          <div class="ui-inputgroup">
+            <p-radioButton formControlName="tripType" value="Return" label="Return" [(ngModel)]="val1" (click)="isDisplayReturn()"></p-radioButton>
+          </div>
+      </div>
+      <div class="p-col-4 p-md-4 p-sm-4 p-xs-4">
+        <div class="ui-inputgroup">
+          <p-radioButton formControlName="tripType" value="One Way" label="One Way" [(ngModel)]="val1" (click)="isDisplayOneWay()"></p-radioButton>
+        </div>
+      </div>
+
+      <div class="p-col-4 p-md-4 p-sm-4 p-xs-4">
+        <div class="ui-inputgroup">
+          <p-radioButton formControlName="tripType" value="Multi City" label="Multi City" [(ngModel)]="val1" (click)="isDisplayMultiCity()"></p-radioButton>
+        </div>
+      </div>
+    </div> <!-- trip types-->
+    <hr>
+    {{ val1}}
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> From</label> <br>
+          <input formControlName="from" type="text" pInputText placeholder="">
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> To</label> <br>
+          <input formControlName="to" type="text" pInputText placeholder="">
+        </div>
+      </div>
+    </div> <!-- for/to -->
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> Travel Dates</label> <br>
+          <p-calendar formControlName="travelDatesOne" [(ngModel)]="dateOne" [showIcon]="true"></p-calendar>
+        </div>
+      </div>
+
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> Travel Dates</label> <br>
+          <p-calendar formControlName="travelDatesTwo" [(ngModel)]="dateTwo" [showIcon]="true"></p-calendar>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+          <div class="ui-inputgroup">
+            <label> Travelers </label> <br>
+            <p-dropdown formControlName="travelers" [options]="packages" [(ngModel)]="selectedPackage" placeholder="Select a Package" optionLabel="name" [showClear]="true"></p-dropdown>
+          </div>
+      </div>
+    </div> <!-- dropdown -->
+
+    <p-accordion>
+      <p-accordionTab header="Advanced Options" [selected]="false">
+        <div class="p-grid ui-fluid">
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Preferred cabin class </label> <br>
+              <p-dropdown formControlName="preferredCabinClass" [options]="cabinClass" [(ngModel)]="selectedCabinClass" placeholder="Select a Package" optionLabel="cabinClassName" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Preferred Airline </label> <br>
+              <p-dropdown formControlName="preferredAirline" [options]="Airline" [(ngModel)]="selectedAirline" placeholder="Select an Airline" optionLabel="preferredAirlineName" [showClear]="true"></p-dropdown>
+            </div>
+          </div>
+        </div> <!-- dropdown -->
+
+        <div class="p-grid ui-fluid p-mt-3">
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <p-checkbox formControlName="selectedDirectFlights" name="group1" value="Direct Flights Only" label="Direct Flights Only" inputId="ny" [(ngModel)]="selectedCheckBox"></p-checkbox>
+          </div>
+          <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+            <p-checkbox formControlName="selectedRefundableFlights" name="group1" value="Refundable Flights Only" label="Refundable Flights Only"  inputId="ny" [(ngModel)]="selectedCheckBox"></p-checkbox>
+          </div>
+        </div> <!-- dropdown -->
+        <hr>
+
+        <div *ngIf="isSelectedMultiCity" class="p-grid ui-fluid p-mt-3">
+          <div class="p-col-12 p-md-4 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Origin</label> <br>
+              <input formControlName="Origin" type="text" pInputText placeholder="">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-4 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Destination</label> <br>
+              <input formControlName="destination" type="text" pInputText placeholder="">
+            </div>
+          </div>
+          <div class="p-col-12 p-md-4 p-sm-12 p-xs-12">
+            <div class="ui-inputgroup">
+              <label> Depart Date</label> <br>
+              <p-calendar formControlName="departDate" [(ngModel)]="dateOne" [showIcon]="true"></p-calendar>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6 p-sm-12 p-xs-12 p-text-right">
+          <button pButton type="submit" label="Search"  icon="pi pi-check" iconPos="left"></button>
+          <button pButton type="button" class="p-button-warning" label="Clear"  icon="pi pi-check" iconPos="left" (click)="onClear()"></button>
+        </div>
+      </p-accordionTab>
+    </p-accordion>
+  </form>
+</p-card>
+

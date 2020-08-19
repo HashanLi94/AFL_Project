@@ -1,0 +1,51 @@
+<p-card >
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+    <div class="p-grid ui-fluid">
+      <div class="p-col-12 p-md-12 p-sm-12 p-xs-12">
+        <div class="ui-inputgroup">
+          <label> City</label> <br>
+          <input formControlName="city" type="text" pInputText placeholder="">
+        </div>
+      </div>
+    </div>
+
+      <div class="p-grid ui-fluid">
+        <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+          <div class="ui-inputgroup">
+            <label> Check In Date</label> <br>
+            <p-calendar  formControlName="checkInDate"  [showIcon]="true"></p-calendar>
+<!--            [(ngModel)]="checkInDate"-->
+          </div>
+        </div>
+
+        <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+          <div class="ui-inputgroup">
+            <label> Check Out Date</label> <br>
+            <p-calendar formControlName="checkOutDate"  [showIcon]="true"></p-calendar>
+<!--            [(ngModel)]="checkOutDate"-->
+          </div>
+        </div>
+      </div>
+
+      <div class="p-grid ui-fluid">
+        <div class="p-col-12 p-md-6 p-sm-12 p-xs-12">
+          <div class="ui-inputgroup">
+            <label> Occupants </label> <br>
+            <p-dropdown formControlName="occupantsHotelsOnly" [options]="ocItemsSet"  [(ngModel)]="ocItem" optionLabel="occupantsItems" placeholder="Select a Package"  [showClear]="true"></p-dropdown>
+          </div>
+        </div>
+      </div> <!-- dropdown -->
+
+      <div class="p-col-12 p-md-6 p-sm-12 p-xs-12 p-text-right">
+          <button pButton type="submit" label="Search"  icon="pi pi-check" iconPos="left"></button>
+          <button pButton type="button" class="p-button-warning" label="Clear"  icon="pi pi-check" iconPos="left" ></button>
+<!--        (click)="onClear()"-->
+      </div>
+
+  </form>
+</p-card>
+
+
+
+

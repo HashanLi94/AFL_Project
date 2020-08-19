@@ -1,0 +1,111 @@
+<app-navbar></app-navbar>
+<div class="container mb-3">
+  <a routerLink="/ticketSelection" class="text-decoration-none">Back</a>
+</div>
+<div class="container">
+  <h3>Select your Add ons</h3>
+  <small>You will need to select a minimum of 2 add ons per person</small>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col p-sm-12 p-md-8 p-lg-8">
+      <div class="p-grid">
+        <div class="p-col p-sm-12 p-md-4 p-lg-4 p-p-0">
+          <img [src] ="tsAddOnImgUrlOne" style="width: 200px; height: auto;">
+        </div>
+        <div class="p-col p-sm-12 p-md-8 p-lg-8">
+          <div class="p-grid">
+            <div class="p-col p-sm-12 p-md-12 p-lg-12">
+              <h4>Grand Pass</h4>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt est iusto modi provident rem. Error excepturi explicabo iste perferendis recusandae.
+            </div>
+            <div class="p-col p-sm-12 p-md-12 p-lg-12">
+              <h5> Pick A Session</h5>
+              <hr>
+              <form [formGroup]="form" (ngSubmit)="submit()">
+
+                <div class="form-group">
+                  <label>Packages</label>
+                  <select formControlName="package" class="form-control" (change)="changeWebsite($event)">
+                    <option disabled>Select the Package</option>
+                    <option>Choose the Package</option>
+                    <option *ngFor="let packageItem of packageList">{{packageItem}}</option>
+                  </select>
+
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+        <hr>
+      </div> <!-- grid one-->
+
+      <div class="p-grid">
+        <div class="p-col p-sm-12 p-md-4 p-lg-4">
+
+        </div>
+        <div class="p-col p-sm-12 p-md-8 p-lg-8">
+          <div class="p-grid">
+            <div class="p-col p-sm-12 p-md-12 p-lg-12">
+
+            </div>
+            <div class="p-col p-sm-12 p-md-12 p-lg-12">
+
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div> <!-- grid Two-->
+
+      <div class="p-grid">
+        <div class="p-col p-sm-12 p-md-4 p-lg-4"></div>
+        <div class="p-col p-sm-12 p-md-8 p-lg-8"></div>
+        <hr>
+      </div> <!-- grid Three-->
+    </div>
+
+
+    <div class="p-col p-sm-12 p-md-4 p-lg-4 p-p-1">
+      <div class="jumbotron">
+        <h5 class="text-center">Booking Summery</h5>
+        <hr>
+        <strong> Day 1 - 20 January</strong>
+
+        <div class="p-grid">
+          <div class="p-col-6 p-md-6 p-sm-6">
+            <p>2x Rod Laver Arena - On Court Seating</p> <br>
+            <p>(2x Adult, 0x Child, 0x Conc)</p>
+
+
+          </div>
+          <div class="p-col-6 p-md-6 p-sm-6">
+              <strong>$210.00 </strong>
+          </div>
+        </div>
+        <hr>
+        <div class="p-grid">
+          <div class="p-col-12">
+            <p> value : {{ getValueChangeWebsite()}}</p>
+          </div>
+
+          <div class="p-col-12">
+            <div *ngIf="f.package.touched && f.package.invalid" class="alert alert-danger">
+              <div *ngIf="f.package.errors.required">Package is required.</div>
+            </div>
+          </div>
+          <div class="p-col-12">
+
+          </div>
+
+        <div class="col-12 p-text-right">
+           <button routerLink="/search-tripDetails" pButton type="button" label="Continue" (click)="handleClick($event)" class="p-button-primary " icon="pi pi-check" iconPos="right" [disabled]="!form.valid"></button>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
