@@ -21,7 +21,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TicketSelectionDetailsComponent } from './components/ticket-selection/ticket-selection-detials/ticket-selection-details.component';
-import { RodLaverAreanaComponent } from './components/ticket-selection/rod-laver-areana/rod-laver-areana.component';
 import { ExtrasSelectionComponent } from './components/extras-selection/extras-selection.component';
 import {NotFoundComponent} from './components/not-found/not-found.component';
 import { SearchTripDetailsComponent } from './components/search-trip-details-only/search-trip-details/search-trip-details.component';
@@ -41,7 +40,6 @@ import { SerchTripResultsBreadcrumbComponent } from './components/search-trip-de
     PassengerSelectionComponent,
     NavbarComponent,
     TicketSelectionDetailsComponent,
-    RodLaverAreanaComponent,
     ExtrasSelectionComponent,
     SearchTripDetailsComponent,
     SummerySearchTripDetailsComponent,
