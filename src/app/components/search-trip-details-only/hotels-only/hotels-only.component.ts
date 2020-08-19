@@ -31,7 +31,16 @@ form = new FormGroup({
 
 
   onSubmit(formValue) {
+    console.log(formValue);
+  }
 
+  onClear(){
+    this.form.setValue({
+      city: '',
+      checkInDate: '',
+      checkOutDate: '',
+      occupantsHotelsOnly: '',
+    });
   }
 
 
